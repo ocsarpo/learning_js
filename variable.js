@@ -1,11 +1,11 @@
 // 선언.
-var str;
+var str0;
 
 // 할당.
-str = 'Hello, Code Runner!';
+str0 = 'Hello, Code Runner!';
 
 // 초기화.
-var str = 'Hello, Code Runner!';
+var str0 = 'Hello, Code Runner!';
 
 // 재할당.
-str = 'Hello, Variable!';
+str0 = 'Hello, Variable!';

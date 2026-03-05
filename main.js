@@ -1,9 +1,9 @@
-var str = 'Hello Code Runner!';
+var str0 = 'Hello Code Runner!';
 
-console.log(str);
-console.log(str);
-console.log(str);
-console.log(str);
+console.log(str0);
+console.log(str0);
+console.log(str0);
+console.log(str0);
 
 // var -> 키워드 (변수 선언 시 사용. 따라서 sum 은 변수)
 // = -> 할당 연산자.
@@ -46,3 +46,26 @@ var sum = 10 + 20;
  * let, const : 호이스팅이 발생하지 않음.
  * ---- AI 자동완성 END ----
  */
+
+
+/**
+ * 문자열.
+ * "문자열", '문자열', `문자열`.
+ */
+let str = "HTML";
+console.log(str);
+
+let str2 = 'JavaScript';
+console.log(str2);
+
+let str3 = `CSS`;
+console.log(str3);
+
+let str4 = '작따 안에서" 큰따쓰기'
+console.log(str4);
+
+let str5 = "큰따 안에서' 작따쓰기";
+console.log(str5);
+
+let str6 = '작따안에서 또 작따써야할 경우 \' 이스케이프 문자 쓰기~!';
+console.log(str6);
