@@ -102,3 +102,14 @@ let indices = 1.0e1; // 지수.
 console.log(indices);
 let double = 10.12; // 소수.
 console.log(double);
+
+/**
+ * 논리형.
+ */
+let bool1 = true;
+let bool2 = false;
+console.log(bool1);
+console.log(bool2);
+
+let bool3 = 10 > 20;
+console.log(bool3);
