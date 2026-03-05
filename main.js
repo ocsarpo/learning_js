@@ -126,3 +126,49 @@ let undefined1 = undefined; // 이렇게 쓰는 일은 없음.
 console.log(null1);
 console.log(undefined0);
 console.log(undefined1);
+
+
+/**
+ * 심볼형: ES6에서 추가된 자료형.
+ * 중복되지 않는 고유한 값을 생성하고 싶을 때. (쓸 일 거의 없다고함.)
+ */
+let symbol1 = Symbol();
+console.log(symbol1);
+
+let symbol2 = Symbol();
+console.log(symbol2);
+
+// 심볼끼리 비교할 때는 === 연산자 사용.
+console.log(symbol1 == symbol2);
+console.log(symbol1 === symbol2);
+
+let symbol3 = Symbol('여기에쓰는건그냥주석역할');
+console.log(symbol3);
+
+let symbol4 = Symbol('여기에쓰는건그냥주석역할');
+console.log(symbol4);
+
+console.log(symbol3 == symbol4);
+console.log(symbol3 === symbol4);
+
+/**
+ * 심볼에 키 지정하면 같은 키면 같은 심볼 반환.
+ */
+let symbol5 = Symbol.for('message');
+console.log(symbol5);
+
+let symbol6 = Symbol.for('message');
+console.log(symbol6);
+
+console.log(symbol5 == symbol6);
+console.log(symbol5 === symbol6);
+
+/**
+ * == 랑 === 차이점.
+ * 
+ * == : 값만 비교.
+ * === : 값 + 타입 비교.
+ * 
+ * == : 타입이 다르면 타입을 맞춰서 비교.
+ * === : 타입이 다르면 바로 false 반환.
+ */
