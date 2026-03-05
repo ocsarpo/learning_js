@@ -84,3 +84,21 @@ let str8 = `백틱에서
 `;
 console.log(str8);
 
+/**
+ * 숫자형. 뭐를 해도 10진수로 출력됨.
+ */
+let integer = 10;
+let hex = 0xa;
+let binary = 0b1010;
+let octal = 0o12;
+console.log(integer);
+console.log(hex);
+console.log(binary);
+console.log(octal);
+
+let negative = -10;
+console.log(negative);
+let indices = 1.0e1; // 지수.
+console.log(indices);
+let double = 10.12; // 소수.
+console.log(double);
