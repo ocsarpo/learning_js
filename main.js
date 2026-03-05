@@ -69,3 +69,18 @@ console.log(str5);
 
 let str6 = '작따안에서 또 작따써야할 경우 \' 이스케이프 문자 쓰기~!';
 console.log(str6);
+
+/**
+ * 백틱 ` : 템플릿 문자열
+ */
+let str7 = `백틱에서는 ' 든 " 든 걍 막 쓸 수 있쥐 \` \``;
+console.log(str7);
+
+let str8 = `백틱에서
+는 
+줄바꿔서
+가능
+내부에서 변수사용하기 ((((((${str7}))))))
+`;
+console.log(str8);
+
