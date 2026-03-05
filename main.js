@@ -1,0 +1,1 @@
+document.write("Using External Javascript!!!");
