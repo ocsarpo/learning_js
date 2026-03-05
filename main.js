@@ -113,3 +113,16 @@ console.log(bool2);
 
 let bool3 = 10 > 20;
 console.log(bool3);
+
+/**
+ * 특수자료형. null, undefined.
+ * 
+ * undefined 선언된 메모리 공간에 아무런 값이 할당되지 않으면 undefined 라는 값이 할당됨.
+ * null : 의도적으로 메모리 공간을 비워두기 위해 사용하는 값.
+ */
+let null1 = null; // 의도적으로 비워두기 위해 할당.
+let undefined0
+let undefined1 = undefined; // 이렇게 쓰는 일은 없음.
+console.log(null1);
+console.log(undefined0);
+console.log(undefined1);
