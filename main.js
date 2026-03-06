@@ -218,3 +218,41 @@ const func2 = function () {
     console.log('함수 표현식');
 };
 func2();
+
+/**
+ * 얕은 복사와 깊은 복사
+ * 
+ * 얕은복사: 메모리 주소만 복사.
+ * 깊은복사: 메모리 주소 복사 + 메모리 주소에 할당된 값 복사. -> 서로 독립적인 데이터를 가짐.
+ */
+
+// 얕은 복사
+console.log("얕복");
+const originalObj = { name: '철수' };
+const shallowCopyObj = originalObj;
+console.log(originalObj);
+console.log(shallowCopyObj);
+
+shallowCopyObj.name = '영희';
+console.log(originalObj);
+console.log(shallowCopyObj);
+
+// 깊은 복사
+console.log("깊복");
+
+const deepCopyObj = { ...originalObj };
+console.log(originalObj);
+console.log(deepCopyObj);
+
+originalObj.name = '철수';
+console.log(originalObj);
+console.log(deepCopyObj);
+
+let a = 10;
+let b = a;
+console.log(a);
+console.log(b);
+
+b = 20;
+console.log(a);
+console.log(b);
