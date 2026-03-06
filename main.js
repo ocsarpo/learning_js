@@ -180,3 +180,28 @@ const arr = [10, 20, 'js', true, null, undefined, Symbol(), [], { key: 'value' }
 console.log(arr);
 console.log(arr[8].key);
 arr[9]();
+
+/**
+ * 객체 리터럴
+ * 하나의 데이터에 여러 데이터 형태의 값을 묶어 한 번에 할당하기 위해 사용.
+ */
+const obj = {
+    key1: 10,
+    key2: 20,
+    key3: 'js',
+    key4: true,
+    key5: null,
+    key6: undefined,
+    key7: Symbol(),
+    key8: [],
+    key9: { key: 'value' },
+    key10: function () { console.log('함수 원소'); },
+    "white space key": 'white space key value',
+};
+console.log(obj);
+console.log(obj.key1);
+console.log(obj['key1']);
+console.log(obj['white space key']);
+console.log(obj.key9.key);
+obj.key10();
+
