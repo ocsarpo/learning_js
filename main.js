@@ -325,3 +325,33 @@ num += 2;
 num **= 10; // 거듭제곱 연산. 2의 10제곱
 console.log(num);
 
+
+/**
+ * 비교 연산자.
+ */
+console.log("비교 연산자");
+
+console.log(`== -> 값만 비교 : ${10 == 10}`);
+console.log(`== -> 값만 비교 : ${10 == '10'}`);  // 형변환이 이루어지고 연산 수행해서 값 비교 가능.
+console.log(`=== -> 값 + 타입 비교 : ${10 === 10}`);
+console.log(`=== -> 값 + 타입 비교 : ${10 === '10'}`); // 자료형이 달라서 false
+
+// != 부등
+console.log(`!= -> 값만 비교 : ${10 != 10}`);
+console.log(`!= -> 값만 비교 : ${10 != '10'}`); // 형변환이 이루어지고 연산 수행해서 값 비교 가능.
+console.log(`!== -> 값 + 타입 비교 : ${10 !== 10}`);
+console.log(`!== -> 값 + 타입 비교 : ${10 !== '10'}`);
+
+// AI 야 그럼 == 나 != 보다는 === 나 !== 를 쓰는 게 좋냐? 대답: 응. 왜냐하면 == 나 != 는 형변환이 이루어지기 때문에 
+// 의도치 않은 결과가 나올 수 있음. (예시: null == undefined -> true)
+console.log('null 과 undefined 에 대한 비교');
+console.log(null == undefined);
+console.log(null === undefined);
+
+
+// 대소 > >= < <=
+console.log(`>  : ${20 > 20}`);
+console.log(`>= : ${20 >= 20}`);
+console.log(`<  : ${20 < 20}`);
+console.log(`<= : ${20 <= 20}`);
+
