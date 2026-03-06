@@ -172,3 +172,11 @@ console.log(symbol5 === symbol6);
  * == : 타입이 다르면 타입을 맞춰서 비교.
  * === : 타입이 다르면 바로 false 반환.
  */
+
+/**
+ * 배열
+ */
+const arr = [10, 20, 'js', true, null, undefined, Symbol(), [], { key: 'value' }, function () { console.log('함수 원소'); }];
+console.log(arr);
+console.log(arr[8].key);
+arr[9]();
