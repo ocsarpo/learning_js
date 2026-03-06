@@ -256,3 +256,23 @@ console.log(b);
 b = 20;
 console.log(a);
 console.log(b);
+
+
+/**
+ * 연산자 우선순위.
+ */
+console.log("연산자 우선순위.");
+const arithmetic1 = 10 + 20 - 10;
+console.log(arithmetic1);
+
+const arithmetic2 = 10 + 20 * 10;
+console.log(arithmetic2);
+
+const arithmetic3 = 10 + 20 * 10 / 5;
+console.log(arithmetic3);
+
+const arithmetic4 = (10 + 20) * 10 / 5;
+console.log(arithmetic4);
+
+const arithmetic5 = 10 + 20 * 10 % 3;
+console.log(arithmetic5);
