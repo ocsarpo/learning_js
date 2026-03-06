@@ -276,3 +276,21 @@ console.log(arithmetic4);
 
 const arithmetic5 = 10 + 20 * 10 % 3;
 console.log(arithmetic5);
+
+
+/**
+ * 문자열 연결 연산자.
+ */
+console.log("문자열 연결 연산자.");
+
+const str10 = 'Hello';
+const str20 = 'World';
+console.log(str10 + str20);
+console.log(str10 - str20); // NaN : Not a Number
+
+// 문자 연산자 숫자 일 경우
+console.log("10" + 10); // 1010 -> + 는 문자열로 형변환
+console.log("10" - 10); // 0 -> - 는 숫자로 형변환  (숫자처럼 생겼을 때) 숫자 아니면 NaN
+console.log("10" * 10); // 100 -> * 는 숫자로 형변환 (숫자처럼 생겼을 때)
+console.log("10" / 10); // 1 -> / 는 숫자로 형변환 (숫자처럼 생겼을 때)
+console.log("10" % 3); // 1 -> % 는 숫자로 형변환 (숫자처럼 생겼을 때)
