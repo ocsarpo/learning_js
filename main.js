@@ -205,3 +205,16 @@ console.log(obj['white space key']);
 console.log(obj.key9.key);
 obj.key10();
 
+/**
+ * 함수.
+ */
+function func() {
+    console.log('함수');
+}
+func();
+
+// 함수 표현식
+const func2 = function () {
+    console.log('함수 표현식');
+};
+func2();
