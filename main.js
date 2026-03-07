@@ -380,3 +380,24 @@ console.log(num2++); // 10
 console.log(++num2); // 12
 console.log(num2--); // 12
 console.log(--num2); // 10
+
+/**
+ * 논리 연산자
+ * && : AND
+ * || : OR
+ * ! : NOT
+ */
+console.log("논리 연산자");
+
+console.log(true && true);
+console.log(true && false);
+console.log(false && true);
+console.log(false && false);
+
+console.log(true || true);
+console.log(true || false);
+console.log(false || true);
+console.log(false || false);
+
+console.log(!true);
+console.log(!false);
