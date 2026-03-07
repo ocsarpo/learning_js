@@ -365,3 +365,18 @@ console.log("삼항 연산자");
 const age = 20;
 const message = age >= 19 ? '성인' : '미성년';
 console.log(message);
+
+/**
+ * 증감연산자.
+ * ++, --
+ * 
+ * 전위 증가/감소 : 먼저 1 증가/감소 후 연산 수행.
+ * 후위 증가/감소 : 먼저 연산 수행 후 1 증가/감소.
+ */
+console.log("증감연산자");
+
+let num2 = 10;
+console.log(num2++); // 10
+console.log(++num2); // 12
+console.log(num2--); // 12
+console.log(--num2); // 10
