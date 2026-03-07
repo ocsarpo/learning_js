@@ -355,3 +355,13 @@ console.log(`>= : ${20 >= 20}`);
 console.log(`<  : ${20 < 20}`);
 console.log(`<= : ${20 <= 20}`);
 
+/**
+ * 삼항 연산자.
+ * condition ? exprlfTrue : exprlfFalse
+ * 빈문자열, 0, null, undefined, false, NaN -> false 로 취급됨. 
+ */
+console.log("삼항 연산자");
+
+const age = 20;
+const message = age >= 19 ? '성인' : '미성년';
+console.log(message);
