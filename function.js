@@ -96,3 +96,16 @@ console.log(pow(10));
 
 const log = () => console.log("hello");
 log();
+
+/**
+ * 스코프.
+ * 글로벌스코프와 로컬스코프.
+ */
+const name = '철수';
+function printName() {
+    const name = '영희'; // const 로 name 이 또 쓰였지만, 스코프가 달라서 가능함.
+    console.log(`이름은 ${name}입니다.`); // 영희
+}
+printName();
+console.log(`이름은 ${name}입니다.`); // 철수
+
