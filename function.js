@@ -109,3 +109,21 @@ function printName() {
 printName();
 console.log(`이름은 ${name}입니다.`); // 철수
 
+/**
+ * 내부함수.
+ */
+const a = 10;
+function outer() {
+    const b = 20;
+    function inner() {
+        const c = 30;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
+    inner();
+    console.log(a);
+    console.log(b);
+    // console.log(c); // 에러 발생. 내부함수의 변수는 외부에서 접근불가.
+}
+outer();
