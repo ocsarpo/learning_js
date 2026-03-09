@@ -127,3 +127,27 @@ function outer() {
     // console.log(c); // 에러 발생. 내부함수의 변수는 외부에서 접근불가.
 }
 outer();
+
+/**
+ * 블록 레벨 스코프 -> let과 const 에만 적용.
+ */
+const globalA = 10;
+{
+    const localB = 20;
+    console.log(globalA);
+    console.log(localB);
+}
+console.log(globalA);
+// console.log(localB); // 에러 발생. 블록 레벨 스코프.
+
+function outerFunction() {
+    const localB = 20;
+    if (true) {
+        const llocalC = 30;
+        console.log(localB);
+        console.log(llocalC);
+    }
+    console.log(localB);
+    // console.log(llocalC); // 에러 발생. 블록 레벨 스코프.
+}
+outerFunction();
