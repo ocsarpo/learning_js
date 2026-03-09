@@ -151,3 +151,27 @@ function outerFunction() {
     // console.log(llocalC); // 에러 발생. 블록 레벨 스코프.
 }
 outerFunction();
+
+/**
+ * 암묵적 전역 변수.
+ * var let const 없이 변수 선언한 것. 쓰지마
+ */
+implicitGlobalVariableA = 10;
+function test() {
+    implicitGlobalVariableB = 20;
+    function inner() {
+        implicitGlobalVariableC = 30;
+        console.log(implicitGlobalVariableA);
+        console.log(implicitGlobalVariableB);
+        console.log(implicitGlobalVariableC);
+    }
+    inner();
+
+    console.log(implicitGlobalVariableA);
+    console.log(implicitGlobalVariableB);
+    console.log(implicitGlobalVariableC);
+}
+test();
+console.log(implicitGlobalVariableA);
+console.log(implicitGlobalVariableB);
+console.log(implicitGlobalVariableC);
