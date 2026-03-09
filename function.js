@@ -55,3 +55,17 @@ function sum4(first, second, ...args) {
 console.log(sum4(10, 20));
 console.log(sum4(10, 20, 30, 40));
 console.log(sum4(10));
+
+/**
+ * 객체와 함수. (메서드)
+ */
+const person = {
+    name: "John",
+    age: 30,
+    job: "developer",
+    introduce: function () {
+        console.log(`안녕하세요, 저는 ${this.name}입니다.`);
+    }
+};
+
+person.introduce();
