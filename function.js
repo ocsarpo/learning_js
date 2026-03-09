@@ -65,7 +65,34 @@ const person = {
     job: "developer",
     introduce: function () {
         console.log(`안녕하세요, 저는 ${this.name}입니다.`);
+    },
+    introduceArrow: () => {
+        // 객체리터럴에서 화살표함수 내 this 사용불가.
+        console.log(`안녕하세요, 저는 ${this.name}입니다.`);
     }
 };
 
 person.introduce();
+
+/**
+ * 화살표 함수. ES6.
+ */
+const sum5 = (first, second, ...args) => {
+    let result = first + second;
+    for (let value of args) {
+        result = result + value;
+    }
+    return result;
+};
+
+console.log(sum5(10, 20));
+console.log(sum5(10, 20, 30, 40));
+console.log(sum5(10));
+
+// 매개변수 한개일때 소괄호 생략가능.
+// 바디가 한 줄이면 생략가능.
+const pow = num => num * num;
+console.log(pow(10));
+
+const log = () => console.log("hello");
+log();
