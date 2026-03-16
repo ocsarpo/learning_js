@@ -64,3 +64,24 @@ receiveA();
 receiveB(receiveC);
 console.log("끝"); // 비동기 함수가 실행되는 동안 다른 코드들이 실행됨. -> 콜백함수를 사용해야 순서제어가 가능.
 
+/**
+ * 콜백 지옥.
+ */
+function counter(n, callback) {
+    setTimeout(function () {
+        console.log(n);
+        callback();
+    }, 1000)
+}
+
+counter(1, function () {
+    counter(2, function () {
+        counter(3, function () {
+            counter(4, function () {
+                counter(5, function () {
+                    console.log("끝");
+                })
+            })
+        })
+    })
+})
