@@ -207,3 +207,61 @@ counter(0).then((num) => {
 counter(0).then(counter).then(counter).then(counter).then(counter).then(counter).catch((error) => {
     console.log(error.message);
 });
+
+/**
+ * async, await.
+ * async : promise 사용을 좀 더 쉽게 만들어줌.
+ */
+function returnPromiseFunction(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve('promise 반환함.');
+        }, ms)
+    })
+}
+console.log(returnPromiseFunction());
+returnPromiseFunction().then((data) => {
+    console.log(data);
+})
+
+
+async function asyncFunction() {
+    return 'async 붙이면 promise 반환함.'
+}
+console.log(asyncFunction()); // Promise { 'async 붙이면 promise 반환함.' }
+
+asyncFunction().then((data) => {
+    console.log(data);
+})
+
+
+function returnPromiseFunction2(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve('promise 반환함.');
+        }, ms)
+    })
+}
+async function asyncDelayFunction() {
+    // returnPromiseFunction2(2000);
+    // return 'returnPromiseFunction2 에서 setTimeout 이 비동기라서 returnPromiseFunction2 이 끝날 때까지 기다리지 않음.'
+
+    // 순서를 보장하려면.
+    // return returnPromiseFunction2(2000).then(() => {
+    //     return 'resolve 를 받아 처리하도록 하면 순서 보장이 되지.(지연후 출력됨)'
+    // })
+
+    // // 여기에 2초 외에 또 2초를 줘야한다면? 여기까지 아는 방식으로는 내부에서 2초를 2번 줘야함.
+    // return returnPromiseFunction2(2000).then(() => {
+    //     return returnPromiseFunction2(2000);
+    // }).then(() => {
+    //     return 'resolve 를 받아 처리하도록 하면 순서 보장이 되지.(지연후 출력됨) 4초 기다림'
+    // })
+
+    // await 키워드 사용. (async 함수 내에서만 사용 가능.)
+    await returnPromiseFunction2(2000);
+    await returnPromiseFunction2(2000);
+    return 'resolve 를 받아 처리하도록 하면 순서 보장이 되지.(지연후 출력됨) 4초 기다림'
+}
+
+asyncDelayFunction().then(console.log);
