@@ -85,3 +85,52 @@ counter(1, function () {
         })
     })
 })
+
+/**
+ * promise - 1.
+ */
+new Promise((resolve, reject) => {
+    // 비동기 로직. (처리 예정인 코드 작성.)
+    /**
+     * 1. 대기 (pending)
+     * 2. 성공 (fulfilled) 이행상태.
+     * 3. 실패 (rejected) 거부상태.
+     */
+
+    // 대기상태.
+    console.log('code running. . . .');
+
+    // 성공.
+    resolve('하이룽');
+
+    // 실패. resolve와 reject는 한 번만 호출됨. 위에서 resolve가 호출되었으므로 reject는 무시됨.
+    reject(new Error('에라다'));
+}).then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.log(error);
+})
+
+new Promise((resolve, reject) => {
+    // 비동기 로직. (처리 예정인 코드 작성.)
+    /**
+     * 1. 대기 (pending)
+     * 2. 성공 (fulfilled) 이행상태.
+     * 3. 실패 (rejected) 거부상태.
+     */
+
+    // 대기상태.
+    console.log('code running. . . .');
+
+    // 실패.
+    reject(new Error('에라다'));
+
+    // 성공. 실패가 호출되서 resolve 호출안됨.
+    resolve('하이룽');
+}).then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.log(error.message);
+    console.log(error);
+})
+console.log('끝');
