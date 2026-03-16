@@ -265,3 +265,23 @@ async function asyncDelayFunction() {
 }
 
 asyncDelayFunction().then(console.log);
+
+/**
+ * async, await 에러 핸들링.
+ */
+function returnPromiseFunction3(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            reject(new Error('에러 발생'));
+        }, ms)
+    })
+}
+async function asyncErrorFunction() {
+    try {
+        await returnPromiseFunction3(2000);
+        return '정상처리';
+    } catch (error) {
+        throw error;
+    }
+}
+asyncErrorFunction().then(console.log).catch(err => console.log(err.message));
