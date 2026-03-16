@@ -134,3 +134,37 @@ new Promise((resolve, reject) => {
     console.log(error);
 })
 console.log('끝');
+
+/**
+ * promise chaining.
+ */
+function first(num) {
+    return new Promise((resolve, reject) => {
+        console.log('first', num);
+        resolve(num + 1);
+    })
+}
+
+function second(num) {
+    return new Promise((resolve, reject) => {
+        console.log('second', num);
+        resolve(num + 1);
+    })
+}
+
+function third(num) {
+    return new Promise((resolve, reject) => {
+        console.log('third', num);
+        resolve(num + 1);
+    })
+}
+
+// chaining. .then()을 반환(return)하면 다음 .then()에서 그 값을 받을 수 있음.
+first(1).then((num) => {
+    return second(num);
+}).then((num) => {
+    return third(num);
+}).then((num) => {
+    console.log(num);
+    console.log('끝');
+})
