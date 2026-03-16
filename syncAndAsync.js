@@ -168,3 +168,42 @@ first(1).then((num) => {
     console.log(num);
     console.log('끝');
 })
+
+/**
+ * promise 활용.
+ * 콜백지옥을 promise로 해결.
+ */
+function counter(n) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            if (n > 5) {
+                reject(new Error('5보다 클 수 없음'));
+            } else {
+                console.log(n);
+                resolve(n + 1);
+            }
+        }, 500)
+    });
+}
+
+// 가독성 비교해보삼.
+counter(0).then((num) => {
+    return counter(num);
+}).then((num) => {
+    return counter(num);
+}).then((num) => {
+    return counter(num);
+}).then((num) => {
+    return counter(num);
+}).then((num) => {
+    return counter(num);
+}).then((num) => {
+    return counter(num);
+}).catch((error) => {
+    console.log(error.message);
+});
+
+// resolve 함수 호출 시 매개변수랑 then에서 호출하는 함수의 매개변수는 같으면 축약 가능.
+counter(0).then(counter).then(counter).then(counter).then(counter).then(counter).catch((error) => {
+    console.log(error.message);
+});
