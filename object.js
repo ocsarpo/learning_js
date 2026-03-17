@@ -110,3 +110,19 @@ console.log(protoTypeUtil2.introduce()); // 안녕하세요 2입니다. -> this 
 console.log('-----------------------------');
 console.log(protoTypeUtil2.__proto__.introduce === ProtoTypeUtil.prototype.introduce); // true
 console.log(protoTypeUtil1.introduce === protoTypeUtil2.introduce); // true
+
+/**
+ * 프로토타입 체인 심화.
+ */
+console.log('-----------------------프로토타입 체인 심화-------------');
+/**
+ * 모든 객체는 Object.prototype을 상속받는다. 그래서 Object 에 있는 함수를 다 하위 객체들에서 쓸 수 있음.
+ */
+console.dir(protoTypeUtil2)
+console.log(protoTypeUtil2.__proto__.__proto__ === Object.prototype); // true
+console.dir(Object.prototype); // __proto__ 가 없음
+console.log(protoTypeUtil2.hasOwnProperty("name")); // true
+console.log(protoTypeUtil2.hasOwnProperty("age")); // true
+console.log(protoTypeUtil2.hasOwnProperty("introduce")); // false
+console.log(protoTypeUtil2.__proto__.hasOwnProperty("introduce")); // true
+
