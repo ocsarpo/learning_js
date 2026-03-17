@@ -33,3 +33,13 @@ console.log('-------');
 Person2('오scar_window', 200);
 console.log(window.name); // 오scar_window
 console.log(window.age); // 200
+
+
+// 함수도 객체다.
+function Person3() { };
+// 객체와 같이 여러 정보가 포함되어 있는 것을 볼 수 있다.
+console.dir(Person3);
+console.log(Person3.name);
+// 가변인자에 대해 배울 때 사용했었던 arguments의 정체는 함수 객체의 프로퍼티다.
+console.log(Person3.arguments);
+
