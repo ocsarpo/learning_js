@@ -53,3 +53,29 @@ console.log(Person3.prototype);
 console.log(Person3.__proto__); // 프로토타입 내부 슬롯. 콘솔에서 [[Prototype]] 로 보임
 console.log(Person3.prototype.constructor); // Person3 함수 객체
 
+/**
+ * 프로토타입 체인.
+ */
+console.log('-----------------------프로토타입 체인-------------');
+function ProtoTypeChain(name, age) {
+    this.name = name;
+    this.age = age;
+    this.introduce = function () {
+        console.log(`안녕하세요 ${this.name}입니다.`);
+    };
+}
+
+const protoTypeChain1 = new ProtoTypeChain('1', 21);
+const protoTypeChain2 = new ProtoTypeChain('2', 22);
+const protoTypeChain3 = new ProtoTypeChain('3', 23);
+const protoTypeChain4 = new ProtoTypeChain('4', 24);
+console.log(protoTypeChain1.__proto__ === ProtoTypeChain.prototype); // true
+console.log(protoTypeChain2.__proto__ === ProtoTypeChain.prototype); // true
+console.log(protoTypeChain3.__proto__ === ProtoTypeChain.prototype); // true
+console.log(protoTypeChain4.__proto__ === ProtoTypeChain.prototype); // true
+
+// 체인으로 객체 자신을 생성한 생성자까지 참조할 수 있다.
+console.log(protoTypeChain1.__proto__.constructor === ProtoTypeChain); // true
+// 알아서 체이닝 됨. this 가 바인딩 된다는 데 차이점은 다음강의
+console.log(protoTypeChain1.constructor === ProtoTypeChain); // true
+
